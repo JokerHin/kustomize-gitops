@@ -1,0 +1,15 @@
+trigger:
+- main
+
+pool:
+  name: 'SelfHostedPool'
+
+steps:
+- script: |
+    echo "=== Verification Step 1: System Architecture ==="
+    uname -a
+    echo "=== Verification Step 2: Agent User Context ==="
+    whoami
+    echo "=== Verification Step 3: Disk Space Check ==="
+    df -h
+  displayName: 'Run System Diagnostics on Self-Hosted Agent'
